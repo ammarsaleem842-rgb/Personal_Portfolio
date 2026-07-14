@@ -1,14 +1,32 @@
 import { Box, TextField, Typography, Button } from "@mui/material";
 import * as Yup from 'yup';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useFormik } from 'formik';
 
 const ContactMe = () => {
+
+    const validationSchema = Yup.object().shape({
+        name: Yup.string().required('Name is required'),
+        email: Yup.string().email('Invalid email').required('Email is required'),
+        message: Yup.string().required('Message is required'),
+    });
+
+    const formik = useFormik({
+        initialValues: {
+            name: '',
+            email: '',
+            message: '',
+        },
+        validationSchema: validationSchema,
+        onSubmit: (values) => {
+            console.log('Form submitted successfully:', values);
+        }
+    });
+
     const textFieldStyles = {
         width: "100%",
         "& .MuiOutlinedInput-root": {
             color: "#ffffff",
             borderRadius: "50px",
-            backgroundColor: "transparent",
             "& fieldset": {
                 borderColor: "rgba(255, 255, 255, 0.15)",
                 borderWidth: "1px",
@@ -20,9 +38,9 @@ const ContactMe = () => {
                 borderColor: "#00b2ff",
             },
         },
-        "& input::placeholder, & textarea::placeholder": {
-            color: "#FFFFFF",
-            opacity: 1,
+        "& .MuiInputBase-input::placeholder": {
+            color: "#ffffff",
+            opacity: 0.4,
         },
     };
 
@@ -34,7 +52,7 @@ const ContactMe = () => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                justifyContent: "center",
+                justify: "center",
                 padding: "40px 24px",
                 boxSizing: "border-box",
             }}
@@ -63,8 +81,10 @@ const ContactMe = () => {
                     Open to full time, remote jobs or freelance projects.
                 </Typography>
             </Box>
+
             <Box
                 component="form"
+                onSubmit={formik.handleSubmit}
                 noValidate
                 autoComplete="off"
                 sx={{
@@ -77,22 +97,40 @@ const ContactMe = () => {
                 }}
             >
                 <TextField
+                    name="name"
                     placeholder="Your Name"
                     variant="outlined"
                     fullWidth
+                    value={formik.values.name}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    error={formik.touched.name && Boolean(formik.errors.name)}
+                    helperText={formik.touched.name && formik.errors.name}
                     sx={textFieldStyles}
                 />
 
                 <TextField
+                    name="email"
                     placeholder="Your Email"
                     variant="outlined"
                     fullWidth
+                    value={formik.values.email}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    error={formik.touched.email && Boolean(formik.errors.email)}
+                    helperText={formik.touched.email && formik.errors.email}
                     sx={textFieldStyles}
                 />
 
                 <TextField
+                    name="message"
                     placeholder="Your message"
                     variant="outlined"
+                    value={formik.values.message}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    error={formik.touched.message && Boolean(formik.errors.message)}
+                    helperText={formik.touched.message && formik.errors.message}
                     multiline
                     rows={6}
                     fullWidth
