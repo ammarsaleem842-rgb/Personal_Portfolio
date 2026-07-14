@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350" width="100%" height="100%">
+  <!-- Deep Dark Background -->
+  <rect width="100%" height="100%" fill="#05050a"/>
+
+  <!-- ==================== 60% KEYBOARD BUNDLE ==================== -->
+  <g transform="translate(50, 75)">
+    <!-- Outer Keyboard Case -->
+    <rect width="560" height="200" rx="10" fill="#0f0f16" stroke="#181822" stroke-width="2" />
+    <!-- Inner Key Bed -->
+    <rect x="8" y="8" width="544" height="184" rx="6" fill="#0a0a0f" />
+
+    <!-- KEY ROW 1 (Numbers / Backspace) -->
+    <g transform="translate(12, 12)">
+      <!-- 13 Standard Keys -->
+      <script type="text/javascript">
+        // Conceptual layout for rendering 
+      </script>
+      <!-- Render individual keys with subtle dark-mode gradients -->
+      <rect x="0" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="36" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="72" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="108" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="144" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="180" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="216" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="252" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="288" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="324" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="360" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="396" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="432" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <!-- Backspace (Longer Key) -->
+      <rect x="468" y="0" width="68" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+    </g>
+
+    <!-- KEY ROW 2 (Tab / QWERTY) -->
+    <g transform="translate(12, 48)">
+      <!-- Tab -->
+      <rect x="0" y="0" width="50" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <!-- 12 Standard Keys -->
+      <rect x="54" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="90" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="126" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="162" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="198" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="234" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="270" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="306" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="342" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="378" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="414" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="450" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <!-- Pipe / Backslash -->
+      <rect x="486" y="0" width="50" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+    </g>
+
+    <!-- KEY ROW 3 (Caps / ASDF / Enter) -->
+    <g transform="translate(12, 84)">
+      <!-- Caps Lock -->
+      <rect x="0" y="0" width="62" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <!-- 11 Standard Keys -->
+      <rect x="66" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="102" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="138" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="174" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="210" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="246" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="282" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="318" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="354" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="390" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="426" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <!-- Enter Key -->
+      <rect x="462" y="0" width="74" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+    </g>
+
+    <!-- KEY ROW 4 (Shift / ZXCV) -->
+    <g transform="translate(12, 120)">
+      <!-- Left Shift -->
+      <rect x="0" y="0" width="82" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <!-- 10 Standard Keys -->
+      <rect x="86" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="122" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="158" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="194" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="230" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="266" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="302" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="338" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="374" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="410" y="0" width="32" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <!-- Right Shift -->
+      <rect x="446" y="0" width="90" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+    </g>
+
+    <!-- KEY ROW 5 (Modifiers / Spacebar) -->
+    <g transform="translate(12, 156)">
+      <!-- Ctrl, Win, Alt -->
+      <rect x="0" y="0" width="40" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="44" y="0" width="40" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="88" y="0" width="40" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <!-- Spacebar -->
+      <rect x="132" y="0" width="224" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <!-- Alt, Win, Menu, Ctrl -->
+      <rect x="360" y="0" width="40" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="404" y="0" width="40" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="448" y="0" width="44" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+      <rect x="496" y="0" width="40" height="32" rx="4" fill="#14141f" stroke="#1c1c2a" stroke-width="1"/>
+    </g>
+  </g>
+
+  <!-- ==================== MINIMALIST MOUSE ==================== -->
+  <g transform="translate(680, 75)">
+    <!-- Mouse Body (Sleek, Apple Magic Mouse style) -->
+    <rect x="40" y="10" width="90" height="180" rx="45" fill="#20202e" stroke="#28283a" stroke-width="1.5" />
+    
+    <!-- Subtle top surface sheen/shading gradient -->
+    <rect x="40" y="10" width="90" height="180" rx="45" fill="none" opacity="0.15" stroke="none"/>
+  </g>
+</svg>
