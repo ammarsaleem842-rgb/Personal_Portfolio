@@ -4,6 +4,7 @@ import Home from "../components/home"
 import AboutMe from "../components/aboutMe"
 import Skills from "../components/skills"
 import ContactMe from "../components/contactMe"
+import Projects from "../components/projects"
 
 
 const Page = () => {
@@ -16,6 +17,7 @@ const Page = () => {
             <Home />
             <AboutMe />
             <Skills />
+            <Projects />
             <ContactMe />
         </Box>
     )
