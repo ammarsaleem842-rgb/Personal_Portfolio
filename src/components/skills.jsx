@@ -9,8 +9,10 @@ import {
     SiGit,
     SiGithub
 } from 'react-icons/si';
+import { useThemeContext } from '../context/ThemeContext';
 
 const Skills = () => {
+    const { isDark } = useThemeContext();
 
     const skillsList = [
         {
@@ -59,71 +61,43 @@ const Skills = () => {
             description: 'Collaborative cloud repository version control and production deployment tracking.'
         }
     ]
+
     return (
         <Box sx={{
-            color: '#ffffff',
+            bgcolor: isDark ? '#02000E' : '#ECEEF2',
+            color: isDark ? '#ffffff' : '#1A1A2E',
             display: 'flex',
+            gap: '50px',
             flexWrap: 'wrap',
-            gap: '16px',
-            width: '100%',
-            py: '40px',
+            justifyContent: 'space-around',
+            py: '50px',
+            px: '40px',
+            transition: 'background-color 0.3s ease, color 0.3s ease',
         }}>
             {skillsList.map((skill, index) => {
                 return (
-                    <Box
-                        key={index}
+                    <Box key={index}
                         sx={{
                             display: 'flex',
                             flexDirection: 'column',
-                            gap: '12px',
-                            width: {
-                                xs: '100%',
-                                sm: 'calc(50% - 12px)',
-                                md: 'calc(25% - 12px)'
-                            },
-                            boxSizing: 'border-box',
-                            p: '16px'
+                            gap: '10px',
+                            width: '20%'
                         }}>
                         <Box sx={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            width: '80%',
-                            pl: '20px',
-                        }}>
-                            <Box sx={{
-                                fontSize: '32px',
-                                color: 'rgba(255, 255, 255, 0.4)',
-                                display: 'flex',
-                                alignItems: 'center',
-                            }}>
-                                {skill.icon}
-                            </Box>
-                            <Typography sx={{
-                                fontWeight: 600,
-                                fontSize: '1rem',
-                                color: '#ffffff',
-                                borderLeft: '1px solid rgba(255, 255, 255, 0.15)',
-                                pl: '16px',
-                                lineHeight: 1.2
-                            }}>
-                                {skill.name}
-                            </Typography>
-                            <Typography sx={{
-                                fontSize: '0.875rem',
-                                color: 'rgba(255, 255, 255, 0.6)',
-                                pl: '16px',
-                                lineHeight: 1.5
-                            }}>
-                                {skill.description}
-                            </Typography>
-                        </Box>
-
+                            color: isDark ? '#706F78' : '#5A5A72',
+                            fontSize: '40px',
+                            transition: 'color 0.3s ease',
+                        }}>{skill.icon}</Box>
+                        <Typography sx={{ color: isDark ? '#E9E8EB' : '#1A1A2E', fontWeight: 600, transition: 'color 0.3s ease' }}>
+                            {skill.name}
+                        </Typography>
+                        <Typography sx={{ color: isDark ? '#706F78' : '#6B7280', fontSize: '0.9rem', transition: 'color 0.3s ease' }}>
+                            {skill.description}
+                        </Typography>
                     </Box>
                 )
-            })
-            }
-
-        </Box >
+            })}
+        </Box>
     )
 }
 export default Skills

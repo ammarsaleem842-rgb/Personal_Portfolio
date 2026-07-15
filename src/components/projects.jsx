@@ -3,9 +3,12 @@ import eCommerceImg from '../assets/e-commereceImg.png';
 import furniture from '../assets/furniture.png';
 import todoAppImg from '../assets/todoApp.png';
 import todoListImg from '../assets/todoList.png';
+import KanBanImg from '../assets/KanBanImg.png';
+import { useThemeContext } from '../context/ThemeContext';
 
 
 const Projects = () => {
+    const { isDark } = useThemeContext();
 
     const projects = [
         {
@@ -14,6 +17,13 @@ const Projects = () => {
             technologies: ["React.js", 'MUI', "Formik ", "Yup"],
             description: 'A sleek, responsive task management application built with React and Material-UI (MUI) to optimize daily productivity. It features a modern, intuitive user interface that delivers smooth user experiences and efficient task organization.',
 
+        },
+        {
+            imgSrc: KanBanImg,
+            name: "Kanban board",
+            technologies: ["react.js", "MUI", "formik", "Yup", "Redux.js", "dnd(drag&drop)"],
+            description: 'Built using HTML, CSS, JavaScript, React.js, and Material UI (MUI) Implemented drag-and-drop task management functionality for seamless user experience Utilized React hooks for smooth state management and component lifecycle control Styled with Material UI components for a modern and consistent interface',
+            githubLink: 'https://github.com/ammarmehdi938/kanban_board'
         },
         {
             imgSrc: eCommerceImg,
@@ -39,20 +49,27 @@ const Projects = () => {
     ];
 
     return (
-        <Box sx={{ backgroundColor: '#03030c', minHeight: '100vh', padding: '60px 20px' }}>
+        <Box sx={{
+            backgroundColor: isDark ? '#03030c' : '#F0F2F7',
+            minHeight: '100vh',
+            padding: '60px 20px',
+            transition: 'background-color 0.3s ease',
+        }}>
             <Typography variant="h2" sx={{
-                color: 'white',
+                color: isDark ? 'white' : '#1A1A2E',
                 textAlign: 'center',
                 fontWeight: 'bold',
-                mb: 2
+                mb: 2,
+                transition: 'color 0.3s ease',
             }}>
                 {`my {dev} projects`}
             </Typography>
             <Typography variant="body1" sx={{
-                color: '#706F78',
+                color: isDark ? '#706F78' : '#6B7280',
                 textAlign: 'center',
                 maxWidth: '600px',
                 margin: '0 auto 50px auto',
+                transition: 'color 0.3s ease',
             }}>
                 {`Here are some of my projects that I've worked on. I enjoy building things that solve problems and make people's lives easier.`}
             </Typography>
@@ -72,7 +89,14 @@ const Projects = () => {
                                 flexDirection: 'column',
                                 borderRadius: '24px',
                                 padding: '24px',
-                                boxSizing: 'border-box'
+                                boxSizing: 'border-box',
+                                bgcolor: isDark ? 'rgba(255,255,255,0.03)' : '#FFFFFF',
+                                border: isDark ? '1px solid rgba(255,255,255,0.06)' : '1px solid rgba(0,0,0,0.08)',
+                                transition: 'background-color 0.3s ease, border-color 0.3s ease',
+                                '&:hover': {
+                                    border: isDark ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(0,180,216,0.3)',
+                                    boxShadow: isDark ? '0 4px 24px rgba(0,0,0,0.3)' : '0 4px 24px rgba(0,0,0,0.08)',
+                                }
                             }}
                         >
                             <Box sx={{
@@ -102,20 +126,22 @@ const Projects = () => {
                                 {project.technologies}
                             </Typography>
                             <Typography variant="h5" sx={{
-                                color: '#FFFFFF',
+                                color: isDark ? '#FFFFFF' : '#1A1A2E',
                                 fontWeight: '700',
                                 fontSize: '24px',
                                 mb: '16px',
-                                fontFamily: 'Inter, sans-serif'
+                                fontFamily: 'Inter, sans-serif',
+                                transition: 'color 0.3s ease',
                             }}>
                                 {project.name}
                             </Typography>
                             <Typography sx={{
-                                color: '#94A3B8',
+                                color: isDark ? '#94A3B8' : '#5A6A7A',
                                 fontSize: '15px',
                                 lineHeight: '1.6',
                                 mb: '28px',
-                                fontFamily: 'Inter, sans-serif'
+                                fontFamily: 'Inter, sans-serif',
+                                transition: 'color 0.3s ease',
                             }}>
                                 {project.description}
                             </Typography>
@@ -161,11 +187,12 @@ const Projects = () => {
                                         rel="noopener noreferrer"
                                         style={{
                                             textDecoration: 'underline',
-                                            textDecorationColor: '#FFFFFF',
+                                            textDecorationColor: isDark ? '#FFFFFF' : '#1A1A2E',
                                             textUnderlineOffset: '4px',
-                                            color: '#FFFFFF',
+                                            color: isDark ? '#FFFFFF' : '#1A1A2E',
                                             fontSize: '14px',
-                                            fontWeight: '600'
+                                            fontWeight: '600',
+                                            transition: 'color 0.3s ease',
                                         }}
                                     >
                                         See on GitHub

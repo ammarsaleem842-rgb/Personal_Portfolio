@@ -1,18 +1,11 @@
-import { useState } from 'react'
-import './App.css'
 import Page from './page/page'
-import { Box } from "@mui/material"
+import { ThemeProvider } from './context/ThemeContext'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <Box sx={{
-      bgcolor: "#02000E",
-      height: "100vh"
-    }}>
+    <ThemeProvider>
       <Page />
-    </Box>
+    </ThemeProvider>
   )
 }
 

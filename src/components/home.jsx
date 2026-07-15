@@ -1,42 +1,50 @@
 import { Box, Button, Typography } from '@mui/material';
 import resumePdf from '../assets/Ammar_Mehdi_Resume.pdf';
 import key from '../assets/Screenshot.png';
+import { useThemeContext } from '../context/ThemeContext';
 
 const Home = () => {
+    const { isDark } = useThemeContext();
+
     return (
         <Box sx={{
-            color: 'white',
+            color: isDark ? 'white' : '#1A1A2E',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
             gap: '24px',
-            bgcolor: '#02000E',
+            bgcolor: isDark ? '#02000E' : '#F5F7FA',
             minHeight: '100vh',
             padding: '40px 20px',
-            boxSizing: 'border-box'
+            boxSizing: 'border-box',
+            transition: 'background-color 0.3s ease, color 0.3s ease',
         }}>
             <Typography variant="h1" sx={{
                 fontSize: { xs: '2.5rem', md: '4.5rem' },
                 fontWeight: 'bold',
-                textAlign: 'center'
+                textAlign: 'center',
+                color: isDark ? '#FFFFFF' : '#1A1A2E',
+                transition: 'color 0.3s ease',
             }}>
                 Frontend Developer
             </Typography>
             <Typography sx={{
-                color: '#8A8993',
+                color: isDark ? '#8A8993' : '#5A5A72',
                 fontSize: '1.1rem',
                 textAlign: 'center',
-                letterSpacing: '0.5px'
+                letterSpacing: '0.5px',
+                transition: 'color 0.3s ease',
             }}>
                 {` { JavaScript, React, Next.js, Vue.js, MongoDB, CSS, Sass... } `}
             </Typography>
             <Typography sx={{
-                color: '#8A8993',
+                color: isDark ? '#8A8993' : '#5A5A72',
                 maxWidth: '550px',
                 textAlign: 'center',
                 lineHeight: '1.6',
-                fontSize: '1rem'
+                fontSize: '1rem',
+                transition: 'color 0.3s ease',
             }}>
                 Specializing in React & Next.js I leverage cutting-edge technologies to bring web projects to life.
             </Typography>
@@ -54,9 +62,9 @@ const Home = () => {
                     textTransform: 'none',
                     padding: '10px 28px',
                     fontSize: '0.95rem',
-                    // '&:hover': {
-                    //     bgcolor: '#00A3D4',
-                    // }
+                    '&:hover': {
+                        bgcolor: '#00A3D4',
+                    }
                 }}>
                     See my dev work
                 </Button>
@@ -96,7 +104,8 @@ const Home = () => {
                         width: "100%",
                         height: 'auto',
                         objectFit: 'contain',
-                        opacity: 0.85
+                        opacity: isDark ? 0.85 : 0.9,
+                        transition: 'opacity 0.3s ease',
                     }}
                 />
             </Box>
@@ -105,3 +114,4 @@ const Home = () => {
 }
 
 export default Home;
+

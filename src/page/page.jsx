@@ -7,11 +7,10 @@ import ContactMe from "../components/contactMe"
 import Projects from "../components/projects"
 
 
+
 const Page = () => {
     return (
         <Box sx={{
-            bgcolor: "#02000E",
-            height: "100vh"
         }}>
             <NavBar />
             <Home />

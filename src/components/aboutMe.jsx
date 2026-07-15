@@ -1,10 +1,13 @@
 import { Box, Divider, Typography } from '@mui/material';
 import introductionImage from '../assets/intro.png';
+import { useThemeContext } from '../context/ThemeContext';
 
 const AboutMe = () => {
+    const { isDark } = useThemeContext();
+
     return (
         <Box sx={{
-            bgcolor: '#02000E',
+            bgcolor: isDark ? '#02000E' : '#F5F7FA',
             pt: '100px',
             pb: '100px',
             px: { xs: '20px', md: '50px' },
@@ -12,25 +15,28 @@ const AboutMe = () => {
             flexDirection: 'column',
             alignItems: 'center',
             width: '100%',
-            boxSizing: 'border-box'
+            boxSizing: 'border-box',
+            transition: 'background-color 0.3s ease',
         }}>
             <Typography variant="h2" sx={{
-                color: 'white',
+                color: isDark ? 'white' : '#1A1A2E',
                 textAlign: 'center',
                 fontSize: { xs: '2.2rem', md: '3.5rem' },
                 fontWeight: 'bold',
                 letterSpacing: '-0.5px',
-                mb: '12px'
+                mb: '12px',
+                transition: 'color 0.3s ease',
             }}>
                 {`Problem solver <coder>`}
             </Typography>
 
             <Typography sx={{
-                color: '#706F78',
+                color: isDark ? '#706F78' : '#6B7280',
                 textAlign: 'center',
                 fontSize: '1.1rem',
                 mb: '60px',
-                fontWeight: '400'
+                fontWeight: '400',
+                transition: 'color 0.3s ease',
             }}>
                 Front - End Web Developer with hands-on application development experience.
             </Typography>
@@ -50,57 +56,32 @@ const AboutMe = () => {
                     flexDirection: 'column',
                     gap: '40px',
                 }}>
-                    <Box sx={{
-                        position: 'relative',
-                        pl: '24px',
-                        borderLeft: '1px solid rgba(112, 111, 120, 0.3)',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '12px'
-                    }}>
-                        <Typography sx={{
-                            color: '#706F78',
-                            fontSize: '0.98rem',
-                            lineHeight: '1.6',
-                            textAlign: 'left'
+                    {[
+                        { bold: 'ICS Graduate.', text: ' Graduated from Sir Syed College, Wazirabad, with a solid foundation in Computer Science and software fundamentals.' },
+                        { bold: 'Specializing in React & Material UI.', text: ' I am constantly working on learning new technologies like TypeScript & following modern development trends.' },
+                        { bold: 'Love working in team environments.', text: ' I enjoy collaborating with developers at FentixTech, but I can also drive projects and work independently.' },
+                    ].map((item, i) => (
+                        <Box key={i} sx={{
+                            position: 'relative',
+                            pl: '24px',
+                            borderLeft: isDark ? '1px solid rgba(112, 111, 120, 0.3)' : '1px solid rgba(100, 100, 120, 0.25)',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '12px',
+                            transition: 'border-color 0.3s ease',
                         }}>
-                            <span style={{ color: '#ffffff', fontWeight: 'bold' }}>ICS Graduate.</span> Graduated from Sir Syed College, Wazirabad, with a solid foundation in Computer Science and software fundamentals.
-                        </Typography>
-                    </Box>
-                    <Box sx={{
-                        position: 'relative',
-                        pl: '24px',
-                        borderLeft: '1px solid rgba(112, 111, 120, 0.3)',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '12px'
-                    }}>
-                        <Typography sx={{
-                            color: '#706F78',
-                            fontSize: '0.98rem',
-                            lineHeight: '1.6',
-                            textAlign: 'left'
-                        }}>
-                            <span style={{ color: '#ffffff', fontWeight: 'bold' }}>Specializing in React & Material UI.</span> I am constantly working on learning new technologies like TypeScript & following modern development trends.
-                        </Typography>
-                    </Box>
-                    <Box sx={{
-                        position: 'relative',
-                        pl: '24px',
-                        borderLeft: '1px solid rgba(112, 111, 120, 0.3)',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '12px'
-                    }}>
-                        <Typography sx={{
-                            color: '#706F78',
-                            fontSize: '0.98rem',
-                            lineHeight: '1.6',
-                            textAlign: 'left'
-                        }}>
-                            <span style={{ color: '#ffffff', fontWeight: 'bold' }}>Love working in team environments.</span> I enjoy collaborating with developers at FentixTech, but I can also drive projects and work independently.
-                        </Typography>
-                    </Box>
+                            <Typography sx={{
+                                color: isDark ? '#706F78' : '#6B7280',
+                                fontSize: '0.98rem',
+                                lineHeight: '1.6',
+                                textAlign: 'left',
+                                transition: 'color 0.3s ease',
+                            }}>
+                                <span style={{ color: isDark ? '#ffffff' : '#1A1A2E', fontWeight: 'bold' }}>{item.bold}</span>
+                                {item.text}
+                            </Typography>
+                        </Box>
+                    ))}
                 </Box>
 
                 <Box sx={{
@@ -123,7 +104,8 @@ const AboutMe = () => {
             <Divider sx={{
                 width: '100%',
                 maxWidth: '1100px',
-                borderColor: 'rgba(112, 111, 120, 0.15)'
+                borderColor: isDark ? 'rgba(112, 111, 120, 0.15)' : 'rgba(100, 100, 120, 0.15)',
+                transition: 'border-color 0.3s ease',
             }} />
         </Box>
     )

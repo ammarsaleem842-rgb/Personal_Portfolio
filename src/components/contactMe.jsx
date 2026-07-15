@@ -1,8 +1,33 @@
 import { Box, TextField, Typography, Button } from "@mui/material";
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
+import { useThemeContext } from '../context/ThemeContext';
 
 const ContactMe = () => {
+    const { isDark } = useThemeContext();
+
+    const textFieldStyles = {
+        width: "100%",
+        "& .MuiOutlinedInput-root": {
+            color: isDark ? "#94A3B8" : "#374151",
+            borderRadius: "50px",
+            "& fieldset": {
+                borderColor: isDark ? "rgba(255, 255, 255, 0.15)" : "rgba(0, 0, 0, 0.2)",
+                borderWidth: "1px",
+            },
+            "&:hover fieldset": {
+                borderColor: isDark ? "rgba(255, 255, 255, 0.3)" : "rgba(0, 0, 0, 0.35)",
+            },
+            "&.Mui-focused fieldset": {
+                borderColor: "#00b2ff",
+            },
+            backgroundColor: isDark ? 'transparent' : 'rgba(255,255,255,0.7)',
+        },
+        "& .MuiInputBase-input::placeholder": {
+            color: isDark ? "#ffffff" : "#9CA3AF",
+            opacity: isDark ? 0.4 : 0.8,
+        },
+    };
 
     const validationSchema = Yup.object().shape({
         name: Yup.string().required('Name is required'),
@@ -22,32 +47,10 @@ const ContactMe = () => {
         }
     });
 
-    const textFieldStyles = {
-        width: "100%",
-        "& .MuiOutlinedInput-root": {
-            color: "#ffffff",
-            borderRadius: "50px",
-            "& fieldset": {
-                borderColor: "rgba(255, 255, 255, 0.15)",
-                borderWidth: "1px",
-            },
-            "&:hover fieldset": {
-                borderColor: "rgba(255, 255, 255, 0.3)",
-            },
-            "&.Mui-focused fieldset": {
-                borderColor: "#00b2ff",
-            },
-        },
-        "& .MuiInputBase-input::placeholder": {
-            color: "#ffffff",
-            opacity: 0.4,
-        },
-    };
 
     return (
         <Box
             sx={{
-                backgroundColor: "#08070e",
                 minHeight: "100vh",
                 display: "flex",
                 flexDirection: "column",
@@ -55,27 +58,31 @@ const ContactMe = () => {
                 justify: "center",
                 padding: "40px 24px",
                 boxSizing: "border-box",
+                bgcolor: isDark ? '#02000E' : '#F5F7FA',
+                transition: 'background-color 0.3s ease',
             }}
         >
             <Box sx={{ textAlign: "center", marginBottom: "48px" }}>
                 <Typography
                     variant="h2"
                     sx={{
-                        color: "white",
+                        color: isDark ? "white" : "#1A1A2E",
                         fontWeight: 600,
                         fontSize: { xs: "2.5rem", md: "3.5rem" },
                         fontFamily: "sans-serif",
                         letterSpacing: "-0.02em",
                         marginBottom: "12px",
+                        transition: 'color 0.3s ease',
                     }}
                 >
                     Let's [work] together
                 </Typography>
                 <Typography
                     sx={{
-                        color: "#706F78",
+                        color: isDark ? "#706F78" : "#6B7280",
                         fontSize: "1.05rem",
                         fontWeight: 400,
+                        transition: 'color 0.3s ease',
                     }}
                 >
                     Open to full time, remote jobs or freelance projects.
