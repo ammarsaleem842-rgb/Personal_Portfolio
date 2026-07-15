@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { useThemeContext } from '../context/ThemeContext';
 
-const ContactMe = () => {
+const ContactMe = ({ contactRef }) => {
     const { isDark } = useThemeContext();
 
     const textFieldStyles = {
@@ -50,6 +50,7 @@ const ContactMe = () => {
 
     return (
         <Box
+            ref={contactRef}
             sx={{
                 minHeight: "100vh",
                 display: "flex",

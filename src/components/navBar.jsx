@@ -2,9 +2,16 @@ import { Typography, Box } from "@mui/material"
 import ToggleTheme from "./toggleTheme"
 import { useThemeContext } from "../context/ThemeContext"
 
-const NavBar = () => {
+const NavBar = ({ homeRef, aboutRef, skillRef, projectRef, contactRef, toScroll }) => {
     const { isDark, toggleTheme } = useThemeContext();
 
+    const navItemStyle = {
+        cursor: 'pointer',
+        color: isDark ? '#9E9CA5' : '#5A5A72',
+        fontSize: '0.92rem',
+        fontWeight: 600,
+        transition: 'color 0.2s ease',
+    };
     return (
         <Box sx={{
             display: 'flex',
@@ -18,6 +25,7 @@ const NavBar = () => {
             zIndex: 1100,
             backdropFilter: 'blur(8px)',
             transition: 'background-color 0.3s ease, border-color 0.3s ease',
+            mb: '80px'
         }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', position: 'relative', width: '30px', height: '30px' }}>
@@ -61,7 +69,7 @@ const NavBar = () => {
                     </Typography>
                 </Box>
             </Box>
-            <Box
+            {/* <Box
                 component="ul"
                 sx={{
                     listStyle: 'none',
@@ -71,8 +79,8 @@ const NavBar = () => {
                     p: 0,
                     m: 0
                 }}
-            >
-                {["Home", "About me", "Skills", "Projects"].map((item) => (
+            > */}
+            {/* {["Home", "About me", "Skills", "Projects"].map((item) => (
                     <Box
                         component="li"
                         key={item}
@@ -89,27 +97,39 @@ const NavBar = () => {
                     >
                         {item}
                     </Box>
-                ))}
-            </Box>
+                ))} */}
+            <ul style={{
+                listStyle: 'none',
+                display: 'flex',
+                gap: '36px'
+            }}>
+                <li style={navItemStyle} onClick={() => toScroll(homeRef)}>Home</li>
+                <li style={navItemStyle} onClick={() => toScroll(aboutRef)}>About</li>
+                <li style={navItemStyle} onClick={() => toScroll(skillRef)}>Skill</li>
+                <li style={navItemStyle} onClick={() => toScroll(projectRef)}>Projects</li>
+            </ul>
+            {/* </Box> */}
             <Box sx={{
                 display: 'flex',
                 gap: '24px',
                 alignItems: 'center'
             }}>
-                <Typography sx={{
-                    color: isDark ? '#E9E8EB' : '#1A1A2E',
-                    fontSize: '0.88rem',
-                    fontWeight: 600,
-                    padding: '8px 26px',
-                    border: isDark ? '1.5px solid #2B2937' : '1.5px solid #D1D5DB',
-                    borderRadius: '30px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                    '&:hover': {
-                        borderColor: isDark ? '#E9E8EB' : '#1A1A2E',
-                        bgcolor: isDark ? 'rgba(233, 232, 235, 0.05)' : 'rgba(26, 26, 46, 0.05)',
-                    }
-                }}>
+                <Typography
+                    onClick={() => toScroll(contactRef)}
+                    sx={{
+                        color: isDark ? '#E9E8EB' : '#1A1A2E',
+                        fontSize: '0.88rem',
+                        fontWeight: 600,
+                        padding: '8px 26px',
+                        border: isDark ? '1.5px solid #2B2937' : '1.5px solid #1A1A2E90',
+                        borderRadius: '30px',
+                        cursor: 'pointer',
+                        transition: 'all 0.2s ease',
+                        '&:hover': {
+                            borderColor: isDark ? '#E9E8EB' : '#1A1A2E',
+                            bgcolor: isDark ? 'rgba(233, 232, 235, 0.05)' : 'rgba(26, 26, 46, 0.05)',
+                        }
+                    }}>
                     Contact me
                 </Typography>
 

@@ -2,22 +2,24 @@ import { Box, Divider, Typography } from '@mui/material';
 import introductionImage from '../assets/intro.png';
 import { useThemeContext } from '../context/ThemeContext';
 
-const AboutMe = () => {
+const AboutMe = ({ aboutRef }) => {
     const { isDark } = useThemeContext();
 
     return (
-        <Box sx={{
-            bgcolor: isDark ? '#02000E' : '#F5F7FA',
-            pt: '100px',
-            pb: '100px',
-            px: { xs: '20px', md: '50px' },
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            width: '100%',
-            boxSizing: 'border-box',
-            transition: 'background-color 0.3s ease',
-        }}>
+        <Box
+            ref={aboutRef}
+            sx={{
+                bgcolor: isDark ? '#02000E' : '#F5F7FA',
+                pt: '100px',
+                pb: '100px',
+                px: { xs: '20px', md: '50px' },
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                width: '100%',
+                boxSizing: 'border-box',
+                transition: 'background-color 0.3s ease',
+            }}>
             <Typography variant="h2" sx={{
                 color: isDark ? 'white' : '#1A1A2E',
                 textAlign: 'center',

@@ -4,7 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 export const ThemeContext = createContext({
     isDark: true,
-    toggleTheme: () => {},
+    toggleTheme: () => { },
 });
 
 export const useThemeContext = () => useContext(ThemeContext);
@@ -37,7 +37,6 @@ export const ThemeProvider = ({ children }) => {
             }),
         [isDark]
     );
-
     return (
         <ThemeContext.Provider value={{ isDark, toggleTheme }}>
             <MuiThemeProvider theme={muiTheme}>

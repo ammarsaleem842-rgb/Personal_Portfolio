@@ -11,7 +11,7 @@ import {
 } from 'react-icons/si';
 import { useThemeContext } from '../context/ThemeContext';
 
-const Skills = () => {
+const Skills = ({ skillRef }) => {
     const { isDark } = useThemeContext();
 
     const skillsList = [
@@ -63,17 +63,20 @@ const Skills = () => {
     ]
 
     return (
-        <Box sx={{
-            bgcolor: isDark ? '#02000E' : '#ECEEF2',
-            color: isDark ? '#ffffff' : '#1A1A2E',
-            display: 'flex',
-            gap: '50px',
-            flexWrap: 'wrap',
-            justifyContent: 'space-around',
-            py: '50px',
-            px: '40px',
-            transition: 'background-color 0.3s ease, color 0.3s ease',
-        }}>
+        <Box
+
+            ref={skillRef}
+            sx={{
+                bgcolor: isDark ? '#02000E' : '#FFFFFF',
+                color: isDark ? '#ffffff' : '#1A1A2E',
+                display: 'flex',
+                gap: '50px',
+                flexWrap: 'wrap',
+                justifyContent: 'space-around',
+                py: '50px',
+                px: '40px',
+                transition: 'background-color 0.3s ease, color 0.3s ease',
+            }}>
             {skillsList.map((skill, index) => {
                 return (
                     <Box key={index}
@@ -84,7 +87,7 @@ const Skills = () => {
                             width: '20%'
                         }}>
                         <Box sx={{
-                            color: isDark ? '#706F78' : '#5A5A72',
+                            color: isDark ? '#5A5A72' : '#02000E',
                             fontSize: '40px',
                             transition: 'color 0.3s ease',
                         }}>{skill.icon}</Box>

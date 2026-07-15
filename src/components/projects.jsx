@@ -5,9 +5,27 @@ import todoAppImg from '../assets/todoApp.png';
 import todoListImg from '../assets/todoList.png';
 import KanBanImg from '../assets/KanBanImg.png';
 import { useThemeContext } from '../context/ThemeContext';
+import { useState, useEffect } from 'react';
 
 
-const Projects = () => {
+const Projects = ({ projectRef }) => {
+
+    const [isExpand, setIsExpant] = useState(false)
+    const [zoomed, setZoomed] = useState(null)
+
+    const handleExpand = () => {
+        setIsExpant(!isExpand)
+    }
+
+    const handleImageClick = (index) => {
+        setZoomed((prev) => (prev === index ? null : index))
+    }
+
+    useEffect(() => {
+        document.body.style.overflow = zoomed !== null ? 'hidden' : ''
+        return () => { document.body.style.overflow = '' }
+    }, [zoomed])
+
     const { isDark } = useThemeContext();
 
     const projects = [
@@ -49,12 +67,14 @@ const Projects = () => {
     ];
 
     return (
-        <Box sx={{
-            backgroundColor: isDark ? '#03030c' : '#F0F2F7',
-            minHeight: '100vh',
-            padding: '60px 20px',
-            transition: 'background-color 0.3s ease',
-        }}>
+        <Box
+            ref={projectRef}
+            sx={{
+                backgroundColor: isDark ? '#03030c' : '#F0F2F7',
+                minHeight: '100vh',
+                padding: '60px 20px',
+                transition: 'background-color 0.3s ease',
+            }}>
             <Typography variant="h2" sx={{
                 color: isDark ? 'white' : '#1A1A2E',
                 textAlign: 'center',
@@ -79,12 +99,26 @@ const Projects = () => {
                 flexWrap: 'wrap',
                 gap: '30px'
             }}>
+                {zoomed !== null && (
+                    <Box
+                        onClick={() => setZoomed(null)}
+                        sx={{
+                            position: 'fixed',
+                            top: 0,
+                            left: 0,
+                            width: '100vw',
+                            height: '100vh',
+                            bgcolor: 'rgba(0,0,0,0.55)',
+                            zIndex: 1300,
+                        }}
+                    />
+                )}
                 {projects.map((project, index) => {
                     return (
                         <Box
                             key={index}
                             sx={{
-                                width: { xs: '100%', sm: '350px' },
+                                width: isExpand ? "100%" : { xs: '100%', sm: '350px' },
                                 display: 'flex',
                                 flexDirection: 'column',
                                 borderRadius: '24px',
@@ -104,16 +138,31 @@ const Projects = () => {
                                 borderRadius: '20px',
                                 overflow: 'hidden',
                                 mb: '24px',
-                                display: 'flex'
+                                display: 'flex',
+                                position: 'relative'
                             }}>
                                 <img
+                                    onClick={() => handleImageClick(index)}
                                     src={project.imgSrc}
                                     alt={`${project.name} preview`}
                                     style={{
                                         width: '100%',
                                         height: '200px',
                                         objectFit: 'cover',
-                                        display: 'block'
+                                        display: 'block',
+                                        cursor: 'pointer',
+                                        transition: 'transform 0.5s ease, width 0.5s ease, height 0.5s ease, top 0.5s ease, left 0.5s ease',
+                                        ...(zoomed === index ? {
+                                            position: 'fixed',
+                                            top: 0,
+                                            left: 0,
+                                            width: '100vw',
+                                            height: '100vh',
+                                            objectFit: 'contain',
+                                            zIndex: 1400,
+                                            borderRadius: 0,
+                                            boxShadow: '0 8px 40px rgba(0,0,0,0.6)'
+                                        } : {})
                                     }}
                                 />
                             </Box>

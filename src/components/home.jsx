@@ -3,23 +3,26 @@ import resumePdf from '../assets/Ammar_Mehdi_Resume.pdf';
 import key from '../assets/Screenshot.png';
 import { useThemeContext } from '../context/ThemeContext';
 
-const Home = () => {
+const Home = ({ homeRef }) => {
     const { isDark } = useThemeContext();
 
     return (
-        <Box sx={{
-            color: isDark ? 'white' : '#1A1A2E',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '24px',
-            bgcolor: isDark ? '#02000E' : '#F5F7FA',
-            minHeight: '100vh',
-            padding: '40px 20px',
-            boxSizing: 'border-box',
-            transition: 'background-color 0.3s ease, color 0.3s ease',
-        }}>
+        <Box
+            ref={homeRef}
+            sx={{
+                color: isDark ? 'white' : '#1A1A2E',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '24px',
+                bgcolor: isDark ? '#02000E' : '#F5F7FA',
+                minHeight: '100vh',
+                padding: '40px 20px',
+                pt: '80px',
+                boxSizing: 'border-box',
+                transition: 'background-color 0.3s ease, color 0.3s ease',
+            }}>
             <Typography variant="h1" sx={{
                 fontSize: { xs: '2.5rem', md: '4.5rem' },
                 fontWeight: 'bold',
@@ -114,4 +117,4 @@ const Home = () => {
 }
 
 export default Home;
-
+

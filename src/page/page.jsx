@@ -5,19 +5,41 @@ import AboutMe from "../components/aboutMe"
 import Skills from "../components/skills"
 import ContactMe from "../components/contactMe"
 import Projects from "../components/projects"
+import { useRef } from "react"
+
 
 
 
 const Page = () => {
+    const homeRef = useRef(null);
+    const aboutRef = useRef(null);
+    const skillRef = useRef(null);
+    const projectRef = useRef(null);
+    const contactRef = useRef(null);
+
+
+    const toScroll = (targetRef) => {
+        targetRef.current?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+
+        })
+    }
     return (
         <Box sx={{
         }}>
-            <NavBar />
-            <Home />
-            <AboutMe />
-            <Skills />
-            <Projects />
-            <ContactMe />
+            <NavBar toScroll={toScroll}
+                homeRef={homeRef}
+                aboutRef={aboutRef}
+                skillRef={skillRef}
+                projectRef={projectRef}
+                contactRef={contactRef}
+            />
+            <Home homeRef={homeRef} />
+            <AboutMe aboutRef={aboutRef} />
+            <Skills skillRef={skillRef} />
+            <Projects projectRef={projectRef} />
+            <ContactMe contactRef={contactRef} />
         </Box>
     )
 }
