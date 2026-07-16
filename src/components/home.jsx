@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from '@mui/material';
 import resumePdf from '../assets/Ammar_Mehdi_Resume.pdf';
-import key from '../assets/Screenshot.png';
-import keyLight from '../assets/keyboardLight.png';
+import keyboardMouseSvg from '../assets/keyboard&mouse.svg';
+import keyboardLightPng from '../assets/keyboardLight.png';
 import { useThemeContext } from '../context/ThemeContext';
 
 const Home = ({ homeRef, projectRef, toScroll }) => {
@@ -104,7 +104,7 @@ const Home = ({ homeRef, projectRef, toScroll }) => {
                 justifyContent: 'center'
             }}>
                 {isDark ? <img
-                    src={key}
+                    src={keyboardMouseSvg}
                     alt="Keyboard and mouse setup"
                     style={{
                         width: "100%",
@@ -114,7 +114,7 @@ const Home = ({ homeRef, projectRef, toScroll }) => {
                         transition: 'opacity 0.3s ease',
                     }}
                 /> : <img
-                    src={keyLight}
+                    src={keyboardLightPng}
                     alt="Keyboard and mouse setup"
                     style={{
                         width: "100%",
