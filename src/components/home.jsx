@@ -1,9 +1,10 @@
 import { Box, Button, Typography } from '@mui/material';
 import resumePdf from '../assets/Ammar_Mehdi_Resume.pdf';
 import key from '../assets/Screenshot.png';
+import keyLight from '../assets/keyboardLight.png';
 import { useThemeContext } from '../context/ThemeContext';
 
-const Home = ({ homeRef }) => {
+const Home = ({ homeRef, projectRef, toScroll }) => {
     const { isDark } = useThemeContext();
 
     return (
@@ -19,7 +20,7 @@ const Home = ({ homeRef }) => {
                 bgcolor: isDark ? '#02000E' : '#F5F7FA',
                 minHeight: '100vh',
                 padding: '40px 20px',
-                pt: '80px',
+                pt: '50px',
                 boxSizing: 'border-box',
                 transition: 'background-color 0.3s ease, color 0.3s ease',
             }}>
@@ -57,18 +58,20 @@ const Home = ({ homeRef }) => {
                 gap: '30px',
                 marginTop: '10px'
             }}>
-                <Button sx={{
-                    color: '#02000E',
-                    bgcolor: '#00C3FF',
-                    borderRadius: '25px',
-                    fontWeight: '600',
-                    textTransform: 'none',
-                    padding: '10px 28px',
-                    fontSize: '0.95rem',
-                    '&:hover': {
-                        bgcolor: '#00A3D4',
-                    }
-                }}>
+                <Button
+                    onClick={() => { toScroll(projectRef) }}
+                    sx={{
+                        color: '#02000E',
+                        bgcolor: '#00C3FF',
+                        borderRadius: '25px',
+                        fontWeight: '600',
+                        textTransform: 'none',
+                        padding: '10px 28px',
+                        fontSize: '0.95rem',
+                        '&:hover': {
+                            bgcolor: '#00A3D4',
+                        }
+                    }}>
                     See my dev work
                 </Button>
 
@@ -100,7 +103,7 @@ const Home = ({ homeRef }) => {
                 display: 'flex',
                 justifyContent: 'center'
             }}>
-                <img
+                {isDark ? <img
                     src={key}
                     alt="Keyboard and mouse setup"
                     style={{
@@ -110,7 +113,17 @@ const Home = ({ homeRef }) => {
                         opacity: isDark ? 0.85 : 0.9,
                         transition: 'opacity 0.3s ease',
                     }}
-                />
+                /> : <img
+                    src={keyLight}
+                    alt="Keyboard and mouse setup"
+                    style={{
+                        width: "100%",
+                        height: 'auto',
+                        objectFit: 'contain',
+                        opacity: isDark ? 0.85 : 0.9,
+                        transition: 'opacity 0.3s ease',
+                    }}
+                />}
             </Box>
         </Box>
     )

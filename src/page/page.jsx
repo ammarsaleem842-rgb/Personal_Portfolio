@@ -35,7 +35,7 @@ const Page = () => {
                 projectRef={projectRef}
                 contactRef={contactRef}
             />
-            <Home homeRef={homeRef} />
+            <Home homeRef={homeRef} toScroll={toScroll} projectRef={projectRef} />
             <AboutMe aboutRef={aboutRef} />
             <Skills skillRef={skillRef} />
             <Projects projectRef={projectRef} />

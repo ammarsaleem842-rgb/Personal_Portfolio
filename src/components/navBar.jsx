@@ -17,7 +17,8 @@ const NavBar = ({ homeRef, aboutRef, skillRef, projectRef, contactRef, toScroll 
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            p: '20px 60px',
+            px: '60px',
+            pt: '20px',
             bgcolor: isDark ? '#01000A' : '#FFFFFF',
             borderBottom: isDark ? '1px solid rgba(255,255,255,0.05)' : '1px solid rgba(0,0,0,0.08)',
             position: 'sticky',
@@ -25,7 +26,6 @@ const NavBar = ({ homeRef, aboutRef, skillRef, projectRef, contactRef, toScroll 
             zIndex: 1100,
             backdropFilter: 'blur(8px)',
             transition: 'background-color 0.3s ease, border-color 0.3s ease',
-            mb: '80px'
         }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', position: 'relative', width: '30px', height: '30px' }}>

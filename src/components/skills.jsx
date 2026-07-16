@@ -73,8 +73,9 @@ const Skills = ({ skillRef }) => {
                 gap: '50px',
                 flexWrap: 'wrap',
                 justifyContent: 'space-around',
-                py: '50px',
+                pt: '50px',
                 px: '40px',
+                mt: '50px',
                 transition: 'background-color 0.3s ease, color 0.3s ease',
             }}>
             {skillsList.map((skill, index) => {
