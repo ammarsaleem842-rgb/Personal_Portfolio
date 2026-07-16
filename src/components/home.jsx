@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from '@mui/material';
 import resumePdf from '../assets/Ammar_Mehdi_Resume.pdf';
 import keyboardMouseSvg from '../assets/keyboard&mouse.svg';
-import keyboardLightPng from '../assets/keyboardLight.png';
+import keyboardLightPng from '../assets/keyboardlight.png';
 import { useThemeContext } from '../context/ThemeContext';
 
 const Home = ({ homeRef, projectRef, toScroll }) => {
